@@ -1,0 +1,353 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/keyframes" ;
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0px;
+    font-family: 'Roboto','sans-serif';
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+/*HEADER*/
+header
+{
+    padding: 10px 0px;
+    box-shadow: 0px 1px 8px #aaa8a8;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/*FOOTER*/
+@include mon_footer();
+
+.location
+{
+    background-color: $bg-gris-clair1;
+    position: relative;
+    z-index: 0;
+    .container
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+        i
+        {
+            margin-right: 10px;
+        }
+    }
+}
+
+.intro
+{
+    text-align: center;
+    background-color: $bg-gris-clair2;
+    padding: 1px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    &__texts
+    {
+        width: 80%;
+        margin: auto;
+    }
+    &__p
+    {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .btn {
+        width: 220px;
+        height: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        border-radius: 50px;
+        background-image: $gradient-boutton;
+        box-shadow: 0px 4px 4px rgba(#aaa8a8, 0.5);
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        &:hover
+        {
+            & .btn__bg
+            {
+                opacity: 1;
+            }
+        }
+        &__bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient( lighten(#e771da, 5) 0%, lighten(#a75ddc, 5) 100%);
+            box-shadow: 0px 4px 4px rgba(#aaa8a8, 0.9);
+            border-radius: 50px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 330ms;
+        }
+    }
+}
+
+
+
+
+/*FONCTIONNEMENT*/
+.fonctionnement
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+    margin: auto;
+    &__elements
+    {
+        display: flex;
+        width: 100%;
+        margin: auto;
+    }
+    .element
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 300px;
+        height: 70px;
+        background-color: $bg-gris-clair2;
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(#aaa8a8, 0.3);
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        &:hover {
+            & .element__bg {
+                opacity: 1;
+            }
+            & i 
+            {
+                color: $primaire;
+            }
+        }
+        &__bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #f5edff;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+            border-radius: 20px;
+        }
+        .contenu-element
+        {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 20px;
+        }
+        span
+        {
+            display: flex;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: $primaire;
+            border-radius: 50px;
+            position: relative;
+            right: 8px;
+        }
+        i
+        {
+            color: #7e7e7e;
+            transition: color 250ms;
+        }
+    }
+    .element1 i 
+    {
+        margin-right: 30px;
+    }
+    .element2 i 
+    {
+        margin-right: 25px;
+    }
+    .element3 i 
+    {
+        margin-right: 20px;
+    }
+}
+
+
+/*RESTAUANTS*/
+.restaurants
+{
+    background-color: $bg-gris-clair2;
+    &__contenu
+    {
+        width: 85%;
+        margin: auto;
+        margin-top: 40px;
+        padding: 20px 0;
+    }
+    .restos
+    {
+        display: flex;
+    }
+    .resto
+    {
+        display: inline-block;
+        width: 23%;
+        height: 250px;
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 0px 1px 4px #cccccc;
+        border-radius: 20px;
+        position: relative;
+        &__image
+        {
+            width: 100%;
+            height: 80%;
+            overflow: hidden;
+            img
+            {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px 20px 0 0;
+                object-fit: cover;
+                transform: scale(1);
+                transition: transform 330ms ease;
+                position: relative;
+                z-index: 0;
+                transform: scale(1);
+                transition: transform 500ms ease;
+                &:hover
+                {
+                    transform: scale(1.5);
+                }
+            }
+        }
+        &__contenu
+        {
+            display: flex;
+            flex-direction: row;
+            width: 85%;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            .info
+            {
+                padding: 5px 0;
+                h4
+                {
+                    display: inline;
+                }
+                span
+                {
+                    display: block;
+                }
+            }
+            i
+            {
+                font-size: 18px;
+                &:hover
+                {
+                    font-weight: 900;
+                    background:-moz-linear-gradient(top, #e771da 0%, #a75ddc 100%); 
+                    background: -webkit-linear-gradient(top, #e771da 0%,#a75ddc 100%); 
+                    background: linear-gradient(to bottom, #e771da 0%,#a75ddc 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color:transparent;
+                    -webkit-animation: icons 500ms;
+                }
+            }
+        }
+    }
+    .nouveau
+    {
+        font-weight: bold;
+        background-color: $tertiaire;
+        color: darken($tertiaire, 35);
+        border-radius: 5px;
+        position: absolute;
+        padding: 5px 10px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+
+
+/*RESPONSIVITÉ*/
+@media screen and (min-width: 992px) /*DESKTOP*/
+{
+    .fonctionnement
+    {
+        align-items: flex-start;
+        &__elements
+        {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .restaurants
+    {
+        
+        padding-bottom: 40px;
+        .restos
+        { 
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (max-width:992px) /*TABLETTE*/
+{
+    .fonctionnement
+    {
+        align-items: center;
+        justify-content: center;
+        &__elements
+        {
+            width: 300px;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 250px;
+        }
+    }
+    .restaurants
+    {
+        .restos
+        {
+            flex-direction: column;
+        }
+        .resto
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}

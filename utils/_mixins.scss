@@ -1,0 +1,108 @@
+@mixin mon_footer 
+{
+    footer
+    {
+        background-color: $bg-gris-fonce;
+    }
+
+    #contenu-footer
+    {
+        width: 85%;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #liens-footer
+    {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer a
+    {
+        text-decoration: none;
+        color: #eeeeee;
+        padding-top: 5px;
+        width: 200px;
+    }
+
+    .fa-utensils
+    {
+        margin-right: 11px;
+    }
+
+    #logo-footer img
+    {
+        width: 130px;
+        height: 22px;
+    }
+}
+
+.blou
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.90);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    animation: loader 0.01s 2250ms forwards;
+}
+
+
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    .un
+    {
+        background: $primaire;
+    }
+    .deux
+    {
+        background: $tertiaire;
+    }
+    .trois
+    {
+        background: $secondaire;
+    }
+    .quatre
+    {
+        background: $tertiaire;
+    }
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  
