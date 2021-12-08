@@ -227,24 +227,6 @@
   }
 }
 
-@-webkit-keyframes text {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 70%;
-  }
-}
-
-@keyframes text {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 70%;
-  }
-}
-
 body {
   margin: 0px;
   font-family: 'Roboto','sans-serif';
@@ -391,7 +373,11 @@ main .titre {
   font-family: 'Shrikhand', 'sans-serif';
 }
 
-main .titre:hover .icon {
+main .titre .icon {
+  cursor: pointer;
+}
+
+main .titre .icon:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#e771da), to(#a75ddc));
   background: linear-gradient(to bottom, #e771da 0%, #a75ddc 100%);
   -webkit-background-clip: text;
@@ -400,7 +386,7 @@ main .titre:hover .icon {
   -webkit-animation: icons 500ms both ease-in-out;
 }
 
-main .titre:hover i {
+main .titre .icon:hover i {
   font-weight: 700;
 }
 
@@ -443,66 +429,21 @@ main .menus .element4 {
 }
 
 main .menus .element {
-  height: 50px;
   background-color: white;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 7px 10px 15px 10px;
-  position: relative;
+  padding: 1rem;
+  margin: 1rem 0;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 4px 4px rgba(170, 168, 168, 0.3);
-          box-shadow: 0px 4px 4px rgba(170, 168, 168, 0.3);
-}
-
-main .menus .element:hover .text__titre {
-  -webkit-animation: text 330ms both;
-          animation: text 330ms both;
-}
-
-main .menus .element:hover .text__description {
-  -webkit-animation: text 330ms both;
-          animation: text 330ms both;
-}
-
-main .menus .element:hover .prix {
-  -webkit-transform: translateX(-250%);
-          transform: translateX(-250%);
-}
-
-main .menus .element:hover .box {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-main .menus .element:hover .box i {
-  -webkit-transform: rotate(0turn);
-          transform: rotate(0turn);
-}
-
-main .menus .text {
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+}
+
+main .menus .element .text {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -511,38 +452,40 @@ main .menus .text {
           flex: 1;
 }
 
-main .menus .text__titre {
+main .menus .element .text__titre {
+  margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-main .menus .text__description {
-  margin-top: -18px;
+main .menus .element .text__description {
+  margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  margin-top: -10px;
 }
 
-main .menus .prix {
+main .menus .element .prix {
   font-weight: 700;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-transition: -webkit-transform 330ms ease-in-out;
-  transition: -webkit-transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-left: 0rem;
 }
 
-main .menus .box {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  color: white;
+main .menus .element .confirmation {
   background-color: #99E2D0;
-  height: 72px;
+  margin: -1rem -6rem -1rem 1rem;
+  border-radius: 0px 15px 15px 0px;
   width: 70px;
-  border-radius: 0px 15px 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,25 +495,26 @@ main .menus .box {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 24px;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: translateX(110%);
-          transform: translateX(110%);
-  -webkit-transition: -webkit-transform 330ms ease-in-out;
-  transition: -webkit-transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
+  -webkit-transition-duration: 330ms;
+          transition-duration: 330ms;
 }
 
-main .menus .box i {
-  display: inline-block;
-  -webkit-transform: rotate(-1turn);
-          transform: rotate(-1turn);
-  -webkit-transition: -webkit-transform 330ms ease-in-out;
-  transition: -webkit-transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
+main .menus .element:hover .confirmation {
+  margin-right: -1rem;
+}
+
+main .menus .element i {
+  color: white;
+  font-size: 24px;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+main .menus .element:hover i {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
 }
 
 main .btn {

@@ -88,20 +88,24 @@ main
         align-items: center;
         justify-content: space-between;
         font-family: 'Shrikhand', 'sans-serif';
-        &:hover .icon
+        .icon
             {
-                background:-moz-linear-gradient(top, #e771da 0%, #a75ddc 100%); 
-                background: -webkit-linear-gradient(top, #e771da 0%,#a75ddc 100%); 
-                background: linear-gradient(to bottom, #e771da 0%,#a75ddc 100%);
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color:transparent;
-                -webkit-animation: icons 500ms both ease-in-out;
-            }
-            &:hover i 
-            {
-                font-weight: 700;
+                cursor: pointer;
+                &:hover
+                {
+                    background:-moz-linear-gradient(top, #e771da 0%, #a75ddc 100%); 
+                    background: -webkit-linear-gradient(top, #e771da 0%,#a75ddc 100%); 
+                    background: linear-gradient(to bottom, #e771da 0%,#a75ddc 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color:transparent;
+                    -webkit-animation: icons 500ms both ease-in-out;
+                }
+                &:hover i 
+                {
+                    font-weight: 700;
+                }
             }
             i
             {
@@ -138,93 +142,70 @@ main
         }
         .element
         {
-            height: 50px;
             background-color: white;
+            box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
             border-radius: 15px;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            justify-content: space-between;
-            padding: 7px 10px 15px 10px;
-            position: relative;
+            padding: 1rem;
+            margin: 1rem 0;
             overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin-bottom: 10px;
             cursor: pointer;
-            box-shadow: 0px 4px 4px rgba(#aaa8a8, 0.3);
-
-            &:hover .text__titre
+            max-width: 100%;
+            display: flex;
+            .text
             {
-                animation: text 330ms both;
-            }
-            &:hover .text__description
-            {
-                animation: text 330ms both;
-            }
-            &:hover .prix
-            {
-                transform: translateX(-250%);
-            }
-            &:hover .box
-            {
-                transform: translateX(0);
-                i
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                flex: 1;
+                &__titre
                 {
-                    transform: rotate(0turn);
+                    margin: 0;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                &__description
+                {
+                    margin: 0;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    margin-top: -10px;
                 }
             }
-        }
-        .text
-        {
-            display: flex;
-            flex-direction: column;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            flex: 1;
-            &__titre
+            .prix
             {
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
+                font-weight: 700;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding-left: 0rem;
             }
-            &__description
+            .confirmation
             {
-                margin-top: -18px;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
+                background-color: $tertiaire;
+                margin: -1rem -6rem -1rem 1rem;
+                border-radius: 0px 15px 15px 0px;
+                width: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition-duration: 330ms;
             }
-        }
-        .prix
-        {
-            font-weight: 700;
-            transform: translateX(0%);
-            transition: transform 330ms ease-in-out;
-        }
-        .box
-        {
-            position: absolute;
-            top: 0;
-            right: 0px;
-            color: white;
-            background-color: $tertiaire;
-            height: 72px;
-            width: 70px;
-            border-radius: 0px 15px 15px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            transform-origin: right;
-            transform: translateX(110%);
-            transition: transform 330ms ease-in-out;
+            &:hover .confirmation
+            {
+                margin-right: -1rem;
+            }
             i
             {
-                display: inline-block;
-                transform: rotate(-1turn);
-                transition: transform 330ms ease-in-out;
+                color: white;
+                font-size: 24px;
+                transform: rotate(360deg);
+                transition-duration: 500ms;
+            }
+            &:hover i
+            {
+                transform: rotate(0);
             }
         }
     }
